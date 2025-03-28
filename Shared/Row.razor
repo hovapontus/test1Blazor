@@ -1,0 +1,38 @@
+﻿@inherits Microsoft.AspNetCore.Components.ComponentBase
+
+<tr>
+    <td class="col-md-1">@RowData.Id</td>
+    <td class="col-md-4">
+        <a onclick="@OnSelect">@RowData.Label</a>
+    </td>
+    <td class="col-md-1">
+        <a onclick="@OnDelete">
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </a>
+    </td>
+    <td class="col-md-6"></td>
+</tr>
+
+@code {
+    [Parameter]
+    public RowData RowData { get; set; }
+
+    [Parameter]
+    public Action<int> OnSelectRow { get; set; }
+
+    [Parameter]
+    public Func<int, Task> OnDeleteRow { get; set; } // Changed from Action<int>
+
+    private void OnSelect()
+    {
+        OnSelectRow?.Invoke(RowData.Id);
+    }
+
+    private async Task OnDelete()
+    {
+        if (OnDeleteRow != null)
+        {
+            await OnDeleteRow.Invoke(RowData.Id);
+        }
+    }
+}
