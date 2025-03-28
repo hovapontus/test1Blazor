@@ -10,11 +10,6 @@
 <button @onclick="ClearRows">Clear</button>
 <button @onclick="SwapRows">Swap Rows</button>
 
-@if (_elapsedTime > 0)
-{
-    <div>Render time: @_elapsedTime ms</div>
-}
-
 <table class="table table-hover table-striped test-data">
     <tbody>
         @foreach (var row in _rows)
