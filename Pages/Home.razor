@@ -10,6 +10,7 @@
 <button @onclick="ClearRows">Clear</button>
 <button @onclick="SwapRows">Swap Rows</button>
 
+
 <table class="table table-hover table-striped test-data">
     <tbody>
         @foreach (var row in _rows)
@@ -26,9 +27,9 @@
     private long _elapsedTime;
     private int _nextId = 1;
 
-    private static readonly string[] Adjectives = ["pretty", "large", "big", "small", "tall"];
-    private static readonly string[] Colors = ["red", "yellow", "blue", "green", "pink"];
-    private static readonly string[] Nouns = ["chair", "car", "computer", "house", "tree"];
+    private static readonly string[] Adjectives = ["pretty", "large", "big", "small", "tall", "short", "long", "handsome", "plain", "quaint", "clean", "elegant", "easy", "angry", "crazy", "helpful", "mushy", "odd", "unsightly", "adorable", "important", "inexpensive", "cheap", "expensive", "fancy"];
+    private static readonly string[] Colors = ["red", "yellow", "blue", "green", "pink", "brown", "purple", "brown", "white", "black", "orange"];
+    private static readonly string[] Nouns = ["table", "chair", "house", "bbq", "desk", "car", "pony", "cookie", "sandwich", "burger", "pizza", "mouse", "keyboard"];
 
     private string GenerateRandomLabel() =>
         $"{Adjectives[Random.Shared.Next(Adjectives.Length)]} " +
