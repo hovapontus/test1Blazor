@@ -18,7 +18,7 @@ namespace test1Blazor.Helpers
             if (_stopwatch != null)
             {
                 _stopwatch.Stop();
-                Console.WriteLine($"[Stopwatch] Render-tid: {_stopwatch.ElapsedMilliseconds} ms");
+                Console.WriteLine($"Render time: {_stopwatch.ElapsedMilliseconds} ms");
             }
         }
     }
